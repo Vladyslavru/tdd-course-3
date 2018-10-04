@@ -43,3 +43,7 @@ TEST(YearTest, OrdinaryYearDerivedBy100)
     EXPECT_FALSE(IsLeapYear(1900));
 }
 
+TEST(YearTest, OrdinaryYearDerivedBy400)
+{
+    EXPECT_TRUE(IsLeapYear(2000));
+}
