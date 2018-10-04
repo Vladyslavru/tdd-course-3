@@ -20,6 +20,10 @@ bool IsLeapYear(int year)
     {
         return false;
     }
+    if (year % 400 == 0)
+    {
+        return true;
+    }
     return year % 4 == 0;
 }
 
