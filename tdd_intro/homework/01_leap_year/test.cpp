@@ -24,3 +24,7 @@ TEST(YearTest, OrdinaryYear)
     EXPECT_FALSE(IsLeapYear(1997));
 }
 
+TEST(YearTest, LeapYear)
+{
+    EXPECT_TRUE(IsLeapYear(1996));
+}
