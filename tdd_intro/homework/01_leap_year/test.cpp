@@ -14,8 +14,12 @@ If your language provides a method in the standard library that does this look-u
 
 #include <gtest/gtest.h>
 
-bool IsLeapYear(int)
+bool IsLeapYear(int year)
 {
+    if (year == 1996)
+    {
+        return true;
+    }
     return false;
 }
 
