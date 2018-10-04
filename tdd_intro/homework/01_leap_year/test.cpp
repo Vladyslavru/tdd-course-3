@@ -20,12 +20,20 @@ bool IsLeapYear(int year)
     {
         return false;
     }
-    return true;
+    else
+    {
+        return true;
+    }
 }
 
 TEST(YearTest, OrdinaryYear)
 {
     EXPECT_FALSE(IsLeapYear(1997));
+}
+
+TEST(YearTest, OrdinaryYearSecond)
+{
+    EXPECT_FALSE(IsLeapYear(1995));
 }
 
 TEST(YearTest, LeapYear)
