@@ -43,3 +43,24 @@ TEST(YearTest, OrdinaryYearDerivedBy400)
 {
     EXPECT_TRUE(IsLeapYear(2000));
 }
+
+TEST(YearTest, AcceptenceTest)
+{
+    EXPECT_TRUE(IsLeapYear(1952));
+    EXPECT_TRUE(IsLeapYear(1956));
+    EXPECT_TRUE(IsLeapYear(1960));
+    EXPECT_TRUE(IsLeapYear(1964));
+    EXPECT_TRUE(IsLeapYear(1968));
+    EXPECT_TRUE(IsLeapYear(1972));
+    EXPECT_TRUE(IsLeapYear(1976));
+
+    EXPECT_FALSE(IsLeapYear(1953));
+    EXPECT_FALSE(IsLeapYear(1957));
+    EXPECT_FALSE(IsLeapYear(1961));
+    EXPECT_FALSE(IsLeapYear(421));
+    EXPECT_FALSE(IsLeapYear(643));
+    EXPECT_FALSE(IsLeapYear(121));
+    EXPECT_FALSE(IsLeapYear(75));
+
+    ASSERT_NO_THROW(IsLeapYear(100));
+}
