@@ -26,3 +26,8 @@ TEST(TernaryConvertion, Convert1)
 {
     EXPECT_EQ("1", ConvertTernary("1"));
 }
+
+TEST(TernaryConvertion, Convert20)
+{
+    EXPECT_EQ("6", ConvertTernary("20"));
+}
