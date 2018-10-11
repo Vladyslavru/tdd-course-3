@@ -19,6 +19,10 @@ If your language provides a method in the standard library to perform the conver
 
 std::string ConvertTernary(std::string ternaryNumber)
 {
+    if (ternaryNumber.empty())
+    {
+        return "";
+    }
     if (ternaryNumber == "20")
     {
         return "6";
