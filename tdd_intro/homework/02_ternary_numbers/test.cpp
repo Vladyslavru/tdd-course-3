@@ -17,12 +17,12 @@ The last place in a ternary number is the 1's place. The second to last is the 3
 If your language provides a method in the standard library to perform the conversion, pretend it doesn't exist and implement it yourself.
 */
 
-std::string ConvertToTernary(std::string ternaryNumber)
+std::string ConvertTernary(std::string ternaryNumber)
 {
     return "1";
 }
 
 TEST(TernaryConvertion, Convert1)
 {
-    EXPECT_EQ("1", ConvertToTernary("1"));
+    EXPECT_EQ("1", ConvertTernary("1"));
 }
