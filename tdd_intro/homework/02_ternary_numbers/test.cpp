@@ -45,3 +45,7 @@ TEST(TernaryConvertion, ConvertEmpty)
     EXPECT_EQ("", ConvertTernary(""));
 }
 
+TEST(TernaryConvertion, Convert20201)
+{
+    EXPECT_EQ("181", ConvertTernary("20201"));
+}
