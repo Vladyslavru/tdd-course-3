@@ -23,11 +23,13 @@ std::string ConvertTernary(std::string ternaryNumber)
     {
         return "";
     }
-    if (ternaryNumber == "20201")
+    int ternaryInt = std::stoi(ternaryNumber);
+
+    if (ternaryInt == 20201)
     {
         return "181";
     }
-    if (ternaryNumber == "20")
+    if (ternaryInt == 20)
     {
         return "6";
     }
