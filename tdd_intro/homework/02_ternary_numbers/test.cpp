@@ -17,23 +17,27 @@ The last place in a ternary number is the 1's place. The second to last is the 3
 If your language provides a method in the standard library to perform the conversion, pretend it doesn't exist and implement it yourself.
 */
 
-std::string ConvertTernary(std::string ternaryNumber)
+std::string ConvertTernary(const std::string& ternaryNumber)
 {
     if (ternaryNumber.empty())
     {
-        return "";
+        return std::string("");
     }
-    int ternaryInt = std::stoi(ternaryNumber);
 
-    if (ternaryInt == 20201)
+    int result = 0;
+    for (int i = ternaryNumber.size() - 1, value = 1; i >= 0; --i)
     {
-        return "181";
+        int currentSymbol = static_cast<int>(ternaryNumber[i]) - 48; // ASCII. 48 - 0, 49 - 1 and so on
+        if (!(currentSymbol >= 0 && currentSymbol <= 3))
+        {
+            return 0;
+        }
+
+        result += currentSymbol * value;
+        value *= 3;
     }
-    if (ternaryInt == 20)
-    {
-        return "6";
-    }
-    return "1";
+
+    return std::to_string(result);
 }
 
 TEST(TernaryConvertion, Convert1)
