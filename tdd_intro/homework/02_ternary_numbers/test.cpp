@@ -59,3 +59,12 @@ TEST(TernaryConvertion, Convert20201)
 {
     EXPECT_EQ("181", ConvertTernary("20201"));
 }
+
+TEST(TernaryConvertion, Acceptance)
+{
+    EXPECT_EQ("211", ConvertTernary("21211"));
+    EXPECT_EQ("4113", ConvertTernary("12122100"));
+    EXPECT_EQ("468", ConvertTernary("122100"));
+    EXPECT_EQ("149", ConvertTernary("12112"));
+}
+
