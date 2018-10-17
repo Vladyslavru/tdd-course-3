@@ -205,6 +205,7 @@ unsigned long long ConvertDigit(Digit digit)
             return i;
         }
     }
+    throw std::runtime_error("Invalid input");
 }
 
 TEST(BankOcr, Convert1)
