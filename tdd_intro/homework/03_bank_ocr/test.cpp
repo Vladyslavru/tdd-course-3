@@ -262,3 +262,11 @@ TEST(BankOcr, ConvertDisplayAll)
 {
     EXPECT_EQ(ConvertDisplay(s_display123456789), 123456789);
 }
+
+TEST(BankOcr, Acceptence)
+{
+    EXPECT_EQ(ConvertDisplay(s_displayAll3), 333333333);
+    EXPECT_EQ(ConvertDisplay(s_displayAll8), 888888888);
+    EXPECT_EQ(ConvertDisplay(s_displayAll4), 444444444);
+}
+
