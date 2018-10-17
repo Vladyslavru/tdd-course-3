@@ -179,3 +179,8 @@ TEST(Bank, DisplayAll0)
 {
     EXPECT_EQ(000000000, ConvertBankOcr(s_displayAll0));
 }
+
+TEST(Bank, s_displayAll1)
+{
+    EXPECT_EQ(111111111, ConvertBankOcr(s_displayAll1));
+}
