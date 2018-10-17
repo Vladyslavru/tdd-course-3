@@ -208,3 +208,8 @@ TEST(BankOcr, Convert3)
 {
     EXPECT_EQ(ConvertDigit(s_digit3), 3);
 }
+
+TEST(BankOcr, Convert5)
+{
+    EXPECT_EQ(ConvertDigit(s_digit5), 5);
+}
