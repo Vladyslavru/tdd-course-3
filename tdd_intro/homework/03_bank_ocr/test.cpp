@@ -208,6 +208,11 @@ unsigned long long ConvertDigit(Digit digit)
     throw std::runtime_error("Invalid input");
 }
 
+unsigned long long ConvertDisplay(Display display)
+{
+    return 000000000;
+}
+
 TEST(BankOcr, Convert1)
 {
     EXPECT_EQ(ConvertDigit(s_digit0), 0);
