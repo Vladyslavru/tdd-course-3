@@ -221,3 +221,12 @@ TEST(BankOcr, Convert5)
 {
     EXPECT_EQ(ConvertDigit(s_digit5), 5);
 }
+
+TEST(BankOcr, ConvertInvalid)
+{
+    const Digit s_digitInvalid = {  " 1 ",
+                                    "|3 ",
+                                    " 4|"
+                                 };
+    EXPECT_THROW(ConvertDigit(s_digitInvalid), std::runtime_error);
+}
