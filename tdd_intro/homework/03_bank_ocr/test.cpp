@@ -231,3 +231,8 @@ TEST(BankOcr, ConvertInvalid)
                                  };
     EXPECT_THROW(ConvertDigit(s_digitInvalid), std::runtime_error);
 }
+
+TEST(BankOcr, ConvertDisplay1)
+{
+    EXPECT_EQ(ConvertDisplay(s_displayAll0), 000000000);
+}
