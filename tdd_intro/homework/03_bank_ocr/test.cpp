@@ -71,7 +71,7 @@ struct Digit
 const unsigned short g_digitsOnDisplay = 9;
 struct Display
 {
-    Digit digits[g_linesInDigit]; // ???
+    Digit digits[g_linesInDigit];
 };
 
 const Digit s_digit0 = { " _ ",
@@ -170,17 +170,11 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
                                      "  ||_  _|  | _||_|  ||_| _|"
 };
 
-unsigned long long ConvertBankOcr(Display display)
-{
-    return 000000000;
-}
+// Test list:
+// Digit
+// Another digit
+// Invalid symbols in input
+// Display
+// Another display
+// Acceptance
 
-TEST(Bank, DisplayAll0)
-{
-    EXPECT_EQ(000000000, ConvertBankOcr(s_displayAll0));
-}
-
-TEST(Bank, s_displayAll1)
-{
-    EXPECT_EQ(111111111, ConvertBankOcr(s_displayAll1));
-}
