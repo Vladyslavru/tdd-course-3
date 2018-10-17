@@ -178,6 +178,11 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
 // Another display
 // Acceptance
 
+unsigned long long ConvertDigit(Digit digit)
+{
+    return 0;
+}
+
 TEST(BankOcr, Convert1)
 {
     EXPECT_EQ(ConvertDigit(s_digit0), 0);
