@@ -65,6 +65,18 @@ const unsigned short g_digitLen = 3;
 const unsigned short g_linesInDigit = 3;
 struct Digit
 {
+    bool operator ==(const Digit& digit)
+    {
+        for (unsigned int i = 0; i < g_linesInDigit; i++)
+        {
+            if (lines[i] != digit.lines[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     std::string lines[g_linesInDigit];
 };
 
@@ -180,7 +192,11 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
 
 unsigned long long ConvertDigit(Digit digit)
 {
-    return 0;
+    if (digit == s_digit0)
+    {
+        return 0;
+    }
+    return 3;
 }
 
 TEST(BankOcr, Convert1)
@@ -188,7 +204,7 @@ TEST(BankOcr, Convert1)
     EXPECT_EQ(ConvertDigit(s_digit0), 0);
 }
 
-TEST(BankOcr, Convert1)
+TEST(BankOcr, Convert3)
 {
     EXPECT_EQ(ConvertDigit(s_digit3), 3);
 }
