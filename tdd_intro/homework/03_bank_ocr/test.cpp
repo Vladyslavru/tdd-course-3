@@ -210,11 +210,18 @@ unsigned long long ConvertDigit(Digit digit)
 
 unsigned long long ConvertDisplay(Display display)
 {
-    if (display.digits[0].lines[1][0] != '|')
+    unsigned long long result = 0;
+    for (size_t digitNumber = 0; digitNumber < g_digitsOnDisplay; digitNumber++)
     {
-        return 222222222;
+        Digit digit;
+        for (size_t lineNumber = 0; lineNumber < g_linesInDigit; lineNumber++)
+        {
+            digit.lines[lineNumber].assign(display.digits[0].lines[lineNumber].cbegin() + digitNumber * g_digitLen,
+                                           display.digits[0].lines[lineNumber].cbegin() + digitNumber * g_digitLen + g_digitLen);
+        }
+        result += ConvertDigit(digit) * std::pow(10, digitNumber);
     }
-    return 000000000;
+    return result;
 }
 
 TEST(BankOcr, Convert1)
