@@ -250,12 +250,12 @@ TEST(BankOcr, ConvertInvalid)
 
 TEST(BankOcr, ConvertDisplay0)
 {
-   // EXPECT_EQ(ConvertDisplay(s_displayAll0), 000000000);
+    EXPECT_EQ(ConvertDisplay(s_displayAll0), 000000000);
 }
 
 TEST(BankOcr, ConvertDisplay2)
 {
-   // EXPECT_EQ(ConvertDisplay(s_displayAll2), 222222222);
+    EXPECT_EQ(ConvertDisplay(s_displayAll2), 222222222);
 }
 
 TEST(BankOcr, ConvertDisplayAll)
