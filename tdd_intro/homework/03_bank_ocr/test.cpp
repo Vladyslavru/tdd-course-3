@@ -1,5 +1,6 @@
 /*### Bank OCR
-Your manager has recently purchased a machine that assists in reading letters and faxes sent in by branch offices. The machine scans the paper documents, and produces a file with a number of entries. You will write a program to parse this file.
+Your manager has recently purchased a machine that assists in reading letters and faxes sent in by branch offices.
+The machine scans the paper documents, and produces a file with a number of entries. You will write a program to parse this file.
 #### Specification
 #### User Story 1
 The following format is created by the machine:
@@ -169,3 +170,7 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
                                      "  ||_  _|  | _||_|  ||_| _|"
 };
 
+TEST(Bank, DisplayAll0)
+{
+    EXPECT_EQ(000000000, ConvertBankOcr(s_displayAll0));
+}
