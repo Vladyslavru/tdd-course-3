@@ -237,7 +237,12 @@ TEST(BankOcr, ConvertInvalid)
     EXPECT_THROW(ConvertDigit(s_digitInvalid), std::runtime_error);
 }
 
-TEST(BankOcr, ConvertDisplay1)
+TEST(BankOcr, ConvertDisplay0)
 {
     EXPECT_EQ(ConvertDisplay(s_displayAll0), 000000000);
+}
+
+TEST(BankOcr, ConvertDisplay2)
+{
+    EXPECT_EQ(ConvertDisplay(s_displayAll2), 222222222);
 }
