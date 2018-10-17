@@ -210,6 +210,10 @@ unsigned long long ConvertDigit(Digit digit)
 
 unsigned long long ConvertDisplay(Display display)
 {
+    if (display.digits[0].lines[1][0] != '|')
+    {
+        return 222222222;
+    }
     return 000000000;
 }
 
