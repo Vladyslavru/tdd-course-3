@@ -170,6 +170,11 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
                                      "  ||_  _|  | _||_|  ||_| _|"
 };
 
+unsigned long long ConvertBankOcr(Display display)
+{
+    return 000000000;
+}
+
 TEST(Bank, DisplayAll0)
 {
     EXPECT_EQ(000000000, ConvertBankOcr(s_displayAll0));
