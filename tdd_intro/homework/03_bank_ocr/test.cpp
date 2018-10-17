@@ -192,11 +192,19 @@ const Display s_display123456789 = { "    _  _     _  _  _  _  _ ",
 
 unsigned long long ConvertDigit(Digit digit)
 {
-    if (digit == s_digit0)
+    static const Digit allDigits[] = {  s_digit0, s_digit1, s_digit2,
+                                        s_digit3, s_digit4, s_digit5,
+                                        s_digit6, s_digit7, s_digit8,
+                                        s_digit9
+                                     };
+
+    for (size_t i = 0; i < 10; i++)
     {
-        return 0;
+        if (digit == allDigits[i])
+        {
+            return i;
+        }
     }
-    return 3;
 }
 
 TEST(BankOcr, Convert1)
