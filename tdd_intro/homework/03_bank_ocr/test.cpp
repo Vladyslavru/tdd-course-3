@@ -187,3 +187,8 @@ TEST(BankOcr, Convert1)
 {
     EXPECT_EQ(ConvertDigit(s_digit0), 0);
 }
+
+TEST(BankOcr, Convert1)
+{
+    EXPECT_EQ(ConvertDigit(s_digit3), 3);
+}
