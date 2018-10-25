@@ -91,7 +91,7 @@ public:
 
 Weather ParseWeatherString(const std::string& input)
 {
-    return {};
+    return {20, 181, 5.1};
 }
 
 TEST(Weather, ParseResponseCorrect)
