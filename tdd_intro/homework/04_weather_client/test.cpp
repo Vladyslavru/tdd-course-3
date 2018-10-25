@@ -99,3 +99,9 @@ TEST(Weather, ParseResponseCorrect)
     Weather w = {20, 181, 5.1};
     EXPECT_EQ(w, ParseWeatherString("20;181;5.1"));
 }
+
+TEST(Weather, ParseResponseCorrect2)
+{
+    Weather w = {24, -142, 7.1};
+    EXPECT_EQ(w, ParseWeatherString("24;142;7.1"));
+}
