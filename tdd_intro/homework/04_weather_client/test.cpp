@@ -91,12 +91,15 @@ public:
 
 Weather ParseWeatherString(const std::string& input)
 {
-    Weather weather;
+    Weather weather {0, 0, 0};
     size_t index1 = input.find(";", 0);
     size_t index2 = input.find(";", index1 + 1);
-    weather.temperature = std::stol(input.substr(0, index1 + 1));
-    weather.windDirection = std::stoul(input.substr(index1 + 1, index2));
-    weather.windSpeed = std::stod(input.substr(index2 + 1));
+    if (index1 != -1 && index2 != -1)
+    {
+        weather.temperature = std::stol(input.substr(0, index1 + 1));
+        weather.windDirection = std::stoul(input.substr(index1 + 1, index2));
+        weather.windSpeed = std::stod(input.substr(index2 + 1));
+    }
     return weather;
 }
 
