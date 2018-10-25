@@ -120,3 +120,9 @@ TEST(Weather, ParseResponseEmpty)
     Weather w = {0, 0, 0};
     EXPECT_EQ(w, ParseWeatherString(""));
 }
+
+TEST(Weather, ParseResponseIncorrectDirection)
+{
+    Weather w = {0, 0, 0};
+    EXPECT_EQ(w, ParseWeatherString("24;400;7.1"));
+}
