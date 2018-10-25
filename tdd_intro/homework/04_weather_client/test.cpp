@@ -91,7 +91,13 @@ public:
 
 Weather ParseWeatherString(const std::string& input)
 {
-    return {20, 181, 5.1};
+    Weather weather;
+    size_t index1 = input.find(";", 0);
+    weather.temperature = std::stol(input.substr(0, index1 + 1));
+    size_t index2 = input.find(";", index1 + 1);
+    weather.windDirection = std::stoul(input.substr(index1 + 1, index2));
+    weather.windSpeed = std::stod(input.substr(index2 + 1));
+    return weather;
 }
 
 TEST(Weather, ParseResponseCorrect)
@@ -103,5 +109,5 @@ TEST(Weather, ParseResponseCorrect)
 TEST(Weather, ParseResponseCorrect2)
 {
     Weather w = {24, -142, 7.1};
-    EXPECT_EQ(w, ParseWeatherString("24;142;7.1"));
+    EXPECT_EQ(w, ParseWeatherString("24;-142;7.1"));
 }
