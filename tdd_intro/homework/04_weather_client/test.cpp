@@ -39,10 +39,10 @@ IMPORTANT:
 
 struct Weather
 {
-    short temperature = 0;
-    unsigned short windDirection = 0;
-    double windSpeed = 0;
-    bool operator==(const Weather& right)
+    short temperature;
+    unsigned short windDirection;
+    double windSpeed;
+    bool operator==(const Weather& right) const
     {
         return temperature == right.temperature &&
                windDirection == right.windDirection &&
@@ -88,3 +88,14 @@ public:
 // 4.1. All functions: Get correct value
 // 4.2. All functions: Get another correct value
 // 4.3. All functions: Invalid input data
+
+Weather ParseWeatherString(const std::string& input)
+{
+    return {};
+}
+
+TEST(Weather, ParseResponseCorrect)
+{
+    Weather w = {20, 181, 5.1};
+    EXPECT_EQ(w, ParseWeatherString("20;181;5.1"));
+}
