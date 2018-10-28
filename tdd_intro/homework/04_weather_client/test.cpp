@@ -231,3 +231,9 @@ TEST(Weather, GetMinimumTemperature)
     WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
     EXPECT_EQ(GetMinTemp(weatherSet), 20);
 }
+
+TEST(Weather, GetMaximumTemperature)
+{
+    WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
+    EXPECT_EQ(GetMaxTemp(weatherSet), 33);
+}
