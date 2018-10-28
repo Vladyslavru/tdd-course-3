@@ -217,3 +217,9 @@ TEST(Weather, GetAverageTemperature2)
 
     EXPECT_EQ(GetAverageTemp(weatherSet), 26);
 }
+
+TEST(Weather, GetAverageTemperatureEmpty)
+{
+    WeatherSet weatherSet = {};
+    EXPECT_EQ(GetAverageTemp(weatherSet), 0);
+}
