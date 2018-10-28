@@ -152,7 +152,7 @@ TEST(Weather, ParseCorrectDate)
     EXPECT_EQ(w, ParseWeatherString(serv.GetWeather("31.08.2018;03:00")));
 }
 
-WeatherSet GetWeatherSet(IWeatherServer& serv)
+WeatherSet GetWeatherSet(IWeatherServer& serv, const std::string& date)
 {
     return {};
 }
@@ -167,5 +167,5 @@ TEST(Weather, ParseCorrectDataSet)
 
     WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
 
-    EXPECT_EQ(weatherSet, GetWeatherSet(serv));
+    EXPECT_EQ(weatherSet, GetWeatherSet(serv, "31.08.2018"));
 }
