@@ -115,6 +115,8 @@ public:
     MOCK_METHOD1(GetWeather, std::string(const std::string& request));
 };
 
+using WeatherSet = std::vector<Weather>;
+
 TEST(Weather, ParseResponseCorrect)
 {
     Weather w = {20, 181, 5.1};
@@ -148,4 +150,22 @@ TEST(Weather, ParseCorrectDate)
 
     Weather w = {20, 181, 5.1};
     EXPECT_EQ(w, ParseWeatherString(serv.GetWeather("31.08.2018;03:00")));
+}
+
+WeatherSet GetWeatherSet(IWeatherServer& serv)
+{
+    return {};
+}
+
+TEST(Weather, ParseCorrectDataSet)
+{
+    FakeServer serv;
+    EXPECT_CALL(serv, GetWeather("31.08.2018;03:00")).WillOnce(Return("20;181;5.1"));
+    EXPECT_CALL(serv, GetWeather("31.08.2018;09:00")).WillOnce(Return("23;204;4.9"));
+    EXPECT_CALL(serv, GetWeather("31.08.2018;15:00")).WillOnce(Return("33;193;4.3"));
+    EXPECT_CALL(serv, GetWeather("31.08.2018;21:00")).WillOnce(Return("26;179;4.5"));
+
+    WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
+
+    EXPECT_EQ(weatherSet, GetWeatherSet(serv));
 }
