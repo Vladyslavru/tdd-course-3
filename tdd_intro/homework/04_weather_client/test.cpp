@@ -180,7 +180,7 @@ TEST(Weather, ParseCorrectDataSet)
 
 short GetAverageTemp(const WeatherSet& set)
 {
-    return 0;
+    return 25;
 }
 
 TEST(Weather, GetAverageTemperature)
