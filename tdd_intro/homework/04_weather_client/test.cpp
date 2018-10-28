@@ -158,6 +158,21 @@ short GetMinTemp(const WeatherSet& set)
     return min;
 }
 
+short GetMaxTemp(const WeatherSet& set)
+{
+    if (set.empty())
+    {
+        return 0;
+    }
+
+    short min = set[0].temperature;
+    for (const auto& w : set)
+    {
+        min = std::max(w.temperature, min);
+    }
+    return min;
+}
+
 TEST(Weather, ParseResponseCorrect)
 {
     Weather w = {20, 181, 5.1};
