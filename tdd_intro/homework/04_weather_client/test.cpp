@@ -145,7 +145,17 @@ short GetAverageTemp(const WeatherSet& set)
 
 short GetMinTemp(const WeatherSet& set)
 {
-    return 0;
+    if (set.empty())
+    {
+        return 0;
+    }
+
+    short min = set[0].temperature;
+    for (const auto& w : set)
+    {
+        min = std::min(w.temperature, min);
+    }
+    return min;
 }
 
 TEST(Weather, ParseResponseCorrect)
