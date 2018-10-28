@@ -154,7 +154,13 @@ TEST(Weather, ParseCorrectDate)
 
 WeatherSet GetWeatherSet(IWeatherServer& serv, const std::string& date)
 {
-    return {};
+    const std::vector<std::string> timeSet = {"03:00", "09:00", "15:00", "21:00"};
+    WeatherSet set;
+    for (const auto& time : timeSet)
+    {
+       set.push_back(ParseWeatherString(serv.GetWeather(date + ";" + time)));
+    }
+    return set;
 }
 
 TEST(Weather, ParseCorrectDataSet)
