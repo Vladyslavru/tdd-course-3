@@ -180,6 +180,11 @@ TEST(Weather, ParseCorrectDataSet)
 
 short GetAverageTemp(const WeatherSet& set)
 {
+    if (set.empty())
+    {
+        return 0;
+    }
+
     int average = 0;
     for (const auto& w : set)
     {
