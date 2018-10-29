@@ -188,6 +188,11 @@ unsigned short GetAverageWindDirection(const WeatherSet& set)
     return average / set.size();
 }
 
+double GetMaximumWindSpeed(const WeatherSet& set)
+{
+    return 0;
+}
+
 TEST(Weather, ParseResponseCorrect)
 {
     Weather w = {20, 181, 5.1};
@@ -272,4 +277,10 @@ TEST(Weather, GetAverageWindDirection)
 {
     WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
     EXPECT_EQ(GetAverageWindDirection(weatherSet), 189);
+}
+
+TEST(Weather, GetMaximumWindSpeed)
+{
+    WeatherSet weatherSet = {{20, 181, 5.1}, {23, 204, 4.9}, {33, 193, 4.3}, {26, 179, 4.5}};
+    EXPECT_EQ(GetMaximumWindSpeed(weatherSet), 5.1);
 }
