@@ -190,7 +190,17 @@ unsigned short GetAverageWindDirection(const WeatherSet& set)
 
 double GetMaximumWindSpeed(const WeatherSet& set)
 {
-    return 0;
+    if (set.empty())
+    {
+        return 0;
+    }
+
+    double min = set[0].windSpeed;
+    for (const auto& w : set)
+    {
+        min = std::max(w.windSpeed, min);
+    }
+    return min;
 }
 
 TEST(Weather, ParseResponseCorrect)
