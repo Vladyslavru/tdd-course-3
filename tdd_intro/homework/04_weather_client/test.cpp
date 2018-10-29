@@ -175,7 +175,17 @@ short GetMaxTemp(const WeatherSet& set)
 
 unsigned short GetAverageWindDirection(const WeatherSet& set)
 {
-    return 0;
+    if (set.empty())
+    {
+        return 0;
+    }
+
+    unsigned int average = 0;
+    for (const auto& w : set)
+    {
+        average += w.windDirection;
+    }
+    return average / set.size();
 }
 
 TEST(Weather, ParseResponseCorrect)
